@@ -1,0 +1,41 @@
+CREATE DATABASE TECH
+USE TECH
+SELECT DATABASE() 
+
+
+CREATE TABLE employee(
+	EID  INT AUTO_INCREMENT,
+    FirstName  varchar(50) NOT NULL,
+    LastName  varchar(50)  NOT NULL,
+    Age  INT NOT NULL,
+    Salary  INT NOT NULL,
+    Location  varchar(50) NOT NULL,
+    PRIMARY KEY(EID)
+)
+
+SHOW TABLES
+DROP TABLE employee
+
+INSERT INTO employee(FirstName,LastName,Age ,Salary,Location) VALUES("Sam","Shah",19,1000,"indore")
+
+SELECT *FROM employee
+
+INSERT INTO employee(FirstName,LastName,Age ,Salary,Location) VALUES("Sujal ","Nage",29,10000,"Delhi");
+INSERT INTO employee(FirstName,LastName,Age ,Salary,Location) VALUES("Sanskar","Sharma",22,34000,"Noida");
+INSERT INTO employee(FirstName,LastName,Age ,Salary,Location) VALUES("Shubham","Mishra",26,22300,"UP");
+INSERT INTO employee(FirstName,LastName,Age ,Salary,Location) VALUES("Rahul","Dubey",24,45600,"Gurugram");
+INSERT INTO employee(FirstName,LastName,Age ,Salary,Location) VALUES("Nikhil","Mahajan",27,60000,"Munbai");
+INSERT INTO employee(FirstName,LastName,Age ,Salary,Location) VALUES("Ram","Choubey",25,200000,"UK");
+
+-- Give me employee details whose salary is >100000
+SELECT FirstName,LastName FROM employee WHERE Salary >10000
+
+-- Give me records of employee having age more than 25
+SELECT * FROM employee WHERE Age > 25
+
+-- Update last name of Sujal with Don
+UPDATE employee SET LastName="Don"
+WHERE EID=2
+
+-- Delete the record of EID=4
+DELETE FROM employee WHERE EID=4
